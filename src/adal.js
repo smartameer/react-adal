@@ -232,7 +232,7 @@ var AuthenticationContext = (function () {
         this._saveItem(this.CONSTANTS.STORAGE.NONCE_IDTOKEN, this._idTokenNonce, true);
         this._saveItem(this.CONSTANTS.STORAGE.ERROR, '');
         this._saveItem(this.CONSTANTS.STORAGE.ERROR_DESCRIPTION, '');
-        var urlNavigate = this._getNavigateUrl('id_token', null) + '&nonce=' + encodeURIComponent(this._idTokenNonce);
+        var urlNavigate = this._getNavigateUrl(this.RESPONSE_TYPE.ID_TOKEN_TOKEN, null) + '&nonce=' + encodeURIComponent(this._idTokenNonce);
 
         if (this.config.displayCall) {
             // User defined way of handling the navigation
@@ -451,7 +451,7 @@ var AuthenticationContext = (function () {
     };
 
     /**
-     * Adds the passed callback to the array of callbacks for the specified resource and puts the array on the window object. 
+     * Adds the passed callback to the array of callbacks for the specified resource and puts the array on the window object.
      * @param {string}   resource A URI that identifies the resource for which the token is requested.
      * @param {string}   expectedState A unique identifier (guid).
      * @param {tokenCallback} callback - The callback provided by the caller. It will be called with token or error.
@@ -1283,7 +1283,7 @@ var AuthenticationContext = (function () {
         }
         else {
             // in angular level, the url for $http interceptor call could be relative url,
-            // if it's relative call, we'll treat it as app backend call.            
+            // if it's relative call, we'll treat it as app backend call.
             return this.config.loginResource;
         }
 
@@ -1433,7 +1433,7 @@ var AuthenticationContext = (function () {
         }
     };
 
-    //Take https://cdnjs.cloudflare.com/ajax/libs/Base64/0.3.0/base64.js and https://en.wikipedia.org/wiki/Base64 as reference. 
+    //Take https://cdnjs.cloudflare.com/ajax/libs/Base64/0.3.0/base64.js and https://en.wikipedia.org/wiki/Base64 as reference.
     AuthenticationContext.prototype._decode = function (base64IdToken) {
         var codes = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
         base64IdToken = String(base64IdToken).replace(/=+$/, '');
@@ -1800,7 +1800,7 @@ var AuthenticationContext = (function () {
      * Returns true if browser supports localStorage, false otherwise.
      * @ignore
      */
-    AuthenticationContext.prototype._supportsLocalStorage = function () {        
+    AuthenticationContext.prototype._supportsLocalStorage = function () {
         return this._supportsStorage('localStorage');
     };
 
@@ -1841,7 +1841,7 @@ var AuthenticationContext = (function () {
     };
 
     /**
-     * Checks the Logging Level, constructs the Log message and logs it. Users need to implement/override this method to turn on Logging. 
+     * Checks the Logging Level, constructs the Log message and logs it. Users need to implement/override this method to turn on Logging.
      * @param {number} level  -  Level can be set 0,1,2 and 3 which turns on 'error', 'warning', 'info' or 'verbose' level logging respectively.
      * @param {string} message  -  Message to log.
      * @param {string} error  -  Error to log.

@@ -1,6 +1,6 @@
 {
-  "name": "react-adal",
-  "version": "0.5.0",
+  "name": "react-adaljs",
+  "version": "1.0.0",
   "description": "Azure Active Directory (ADAL) support for ReactJS",
   "main": "lib/react-adal.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/salvoravida/react-adal.git"
+    "url": "git+https://github.com/smartameer/react-adal.git"
   },
   "keywords": [
     "react",
@@ -30,9 +30,9 @@
   "author": "salvoravida",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/salvoravida/react-adal/issues"
+    "url": "https://github.com/smartameer/react-adal/issues"
   },
-  "homepage": "https://github.com/salvoravida/react-adal#readme",
+  "homepage": "https://github.com/smartameer/react-adal#readme",
   "dependencies": {},
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0"
